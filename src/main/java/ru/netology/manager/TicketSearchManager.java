@@ -3,12 +3,14 @@ package ru.netology.manager;
 import ru.netology.domain.TicketSearch;
 import ru.netology.repository.TicketSearchRepository;
 
+import java.util.Comparator;
+
 import static java.lang.System.arraycopy;
 import static java.util.Arrays.sort;
 
 
 public class TicketSearchManager {
-    private TicketSearchRepository ticketSearchRepository = new TicketSearchRepository();
+    private TicketSearchRepository ticketSearchRepository;
 
     public TicketSearchManager(TicketSearchRepository repository) {
         this.ticketSearchRepository = repository;
@@ -18,7 +20,7 @@ public class TicketSearchManager {
         ticketSearchRepository.save(item);
     }
 
-    public TicketSearch[] findAll(String from, String to) {
+    public TicketSearch[] findAll(String from, String to, Comparator<TicketSearch> comparator) {
         TicketSearch[] result = new TicketSearch[0];
         for (TicketSearch ticketSearch : ticketSearchRepository.findAll()) {
             if (ticketSearch.getArrivalAirport().equalsIgnoreCase(from) & ticketSearch.getDepartureAirport().equalsIgnoreCase(to)) {
@@ -28,7 +30,7 @@ public class TicketSearchManager {
                 result = tmp;
             }
         }
-        sort(result);
+        sort(result, comparator);
         return result;
     }
 }

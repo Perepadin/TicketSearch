@@ -18,6 +18,6 @@ public class TicketSearch implements Comparable<TicketSearch> {
 
     @Override
     public int compareTo(TicketSearch anotherTicket) {
-        return price - anotherTicket.price;
+        return flightTime - anotherTicket.flightTime;
     }
 }
