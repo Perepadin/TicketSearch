@@ -16,7 +16,7 @@ class TicketSearchManagerTest {
     TicketSearch ticketSearch3 = new TicketSearch(2, 6000, "ADD", "AAB", 150);
     TicketSearch ticketSearch4 = new TicketSearch(3, 7000, "MBA", "DAV", 200);
     TicketSearch ticketSearch5 = new TicketSearch(4, 5000, "AAA", "AAF", 220);
-    TicketSearch ticketSearch6 = new TicketSearch(4, 5000, "AAA", "AAF", 180);
+    TicketSearch ticketSearch6 = new TicketSearch(5, 5000, "AAA", "AAF", 180);
 
     @Test
     void findAllMany() {
