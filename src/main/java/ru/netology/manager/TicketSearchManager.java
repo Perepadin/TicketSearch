@@ -8,7 +8,7 @@ import static java.util.Arrays.sort;
 
 
 public class TicketSearchManager {
-    private TicketSearchRepository ticketSearchRepository = new TicketSearchRepository();
+    private TicketSearchRepository ticketSearchRepository;
 
     public TicketSearchManager(TicketSearchRepository repository) {
         this.ticketSearchRepository = repository;
