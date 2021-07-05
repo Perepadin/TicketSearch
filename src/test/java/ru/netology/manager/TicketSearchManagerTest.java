@@ -37,6 +37,7 @@ class TicketSearchManagerTest {
         ticketSearchManager.add(ticketSearch3);
         ticketSearchManager.add(ticketSearch4);
         ticketSearchManager.add(ticketSearch5);
+        ticketSearchManager.add(ticketSearch6);
 
         assertArrayEquals(new TicketSearch[]{ticketSearch3}, ticketSearchManager.findAll("ADD", "AAB",new TicketSearchByFlightTime()));
     }
@@ -48,6 +49,7 @@ class TicketSearchManagerTest {
         ticketSearchManager.add(ticketSearch3);
         ticketSearchManager.add(ticketSearch4);
         ticketSearchManager.add(ticketSearch5);
+        ticketSearchManager.add(ticketSearch6);
 
         assertArrayEquals(new TicketSearch[]{}, ticketSearchManager.findAll("GGG", "RFT",new TicketSearchByFlightTime()));
     }
