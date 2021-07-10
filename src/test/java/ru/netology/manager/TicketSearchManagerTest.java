@@ -19,6 +19,7 @@ class TicketSearchManagerTest {
 
     @Test
     void findAllMany() {
+        //  тест на поиск по все массиву с несколькими совпадениями
         ticketSearchManager.add(ticketSearch1);
         ticketSearchManager.add(ticketSearch2);
         ticketSearchManager.add(ticketSearch3);
@@ -32,6 +33,7 @@ class TicketSearchManagerTest {
 
     @Test
     void findAllOne() {
+        //  тест на поиск по все массиву с одним совпадением
         ticketSearchManager.add(ticketSearch1);
         ticketSearchManager.add(ticketSearch2);
         ticketSearchManager.add(ticketSearch3);
@@ -45,6 +47,7 @@ class TicketSearchManagerTest {
 
     @Test
     void findAllNothing() {
+        //  тест на поиск по все массиву с отсутствием совпадений
         ticketSearchManager.add(ticketSearch1);
         ticketSearchManager.add(ticketSearch2);
         ticketSearchManager.add(ticketSearch3);
