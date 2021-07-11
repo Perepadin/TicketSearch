@@ -16,6 +16,7 @@ class TicketSearchManagerTest {
     TicketSearch ticketSearch3 = new TicketSearch(2, 6000, "ADD", "AAB", 150);
     TicketSearch ticketSearch4 = new TicketSearch(3, 7000, "MBA", "DAV", 200);
     TicketSearch ticketSearch5 = new TicketSearch(4, 5000, "AAA", "AAF", 220);
+    TicketSearch ticketSearch6 = new TicketSearch(5, 5000, "AAA", "AAF", 180);
 
     @Test
     void findAllMany() {
@@ -25,10 +26,9 @@ class TicketSearchManagerTest {
         ticketSearchManager.add(ticketSearch3);
         ticketSearchManager.add(ticketSearch4);
         ticketSearchManager.add(ticketSearch5);
+        ticketSearchManager.add(ticketSearch6);
 
-        ticketSearchManager.findAll("AAA", "AAF");
-
-        assertArrayEquals(new TicketSearch[]{ticketSearch1, ticketSearch5}, ticketSearchManager.findAll("AAA", "AAF"));
+        assertArrayEquals(new TicketSearch[]{ticketSearch6, ticketSearch5, ticketSearch1}, ticketSearchManager.findAll("AAA", "AAF",new TicketSearchByFlightTime()));
     }
 
     @Test
@@ -39,10 +39,9 @@ class TicketSearchManagerTest {
         ticketSearchManager.add(ticketSearch3);
         ticketSearchManager.add(ticketSearch4);
         ticketSearchManager.add(ticketSearch5);
+        ticketSearchManager.add(ticketSearch6);
 
-        ticketSearchManager.findAll("ADD", "AAB");
-
-        assertArrayEquals(new TicketSearch[]{ticketSearch3}, ticketSearchManager.findAll("ADD", "AAB"));
+        assertArrayEquals(new TicketSearch[]{ticketSearch3}, ticketSearchManager.findAll("ADD", "AAB",new TicketSearchByFlightTime()));
     }
 
     @Test
@@ -53,9 +52,8 @@ class TicketSearchManagerTest {
         ticketSearchManager.add(ticketSearch3);
         ticketSearchManager.add(ticketSearch4);
         ticketSearchManager.add(ticketSearch5);
+        ticketSearchManager.add(ticketSearch6);
 
-        ticketSearchManager.findAll("GGG", "RFT");
-
-        assertArrayEquals(new TicketSearch[]{}, ticketSearchManager.findAll("GGG", "RFT"));
+        assertArrayEquals(new TicketSearch[]{}, ticketSearchManager.findAll("GGG", "RFT",new TicketSearchByFlightTime()));
     }
 }
